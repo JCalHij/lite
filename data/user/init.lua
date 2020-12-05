@@ -1,10 +1,10 @@
 -- put user settings here
 -- this module will be loaded after everything else when the application starts
 
-local keymap = require "core.keymap"
-local config = require "core.config"
-local style = require "core.style"
 local common = require "core.common"
+local config = require "core.config"
+local keymap = require "core.keymap"
+local style = require "core.style"
 
 -- User theme
 require "user.colors.javi"
@@ -29,4 +29,3 @@ keymap.add {
   ["ctrl+8"] = "root:switch-to-tab-8",
   ["ctrl+9"] = "root:switch-to-tab-9",
 }
-
