@@ -344,7 +344,33 @@ static int f_exec(lua_State *L) {
   sprintf(buf, "cmd /c \"%s\"", cmd);
   WinExec(buf, SW_HIDE);
 #else
-  sprintf(buf, "%s &", cmd);
+// Remove quotes from lua string, so that we can execute anything
+{
+  sprintf(buf, "%s", cmd);
+
+  /* Initial quote */
+
+  char* buf_init = strchr(buf, '\"');
+  buf_init++;
+
+  /* Last quote */
+
+  char* last_quote = buf_init;
+  char* temp;
+  for(int i = 0; i < len; i ++) {
+    temp = strchr(last_quote, '"');
+    if(temp) {
+      last_quote = ++temp;
+    }
+    else {
+      break;
+    }
+  }
+  last_quote--;
+  (*last_quote) = '\0';
+
+  sprintf(buf, "%s &", buf_init);
+}
   int res = system(buf);
   (void) res;
 #endif
