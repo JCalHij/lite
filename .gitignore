@@ -1,3 +1,6 @@
+build/
+.vscode/
+
 # Ignore fonts added by the user
 data/fonts/JetBrainsMono*
 
