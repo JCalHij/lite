@@ -1,0 +1,5 @@
+# Ignore fonts added by the user
+data/fonts/JetBrainsMono*
+
+# Ignore the binary file
+lite
