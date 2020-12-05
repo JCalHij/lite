@@ -1,7 +1,9 @@
 -- put user settings here
 -- this module will be loaded after everything else when the application starts
 
+local command = require "core.command"
 local common = require "core.common"
+local core = require "core"
 local config = require "core.config"
 local keymap = require "core.keymap"
 local style = require "core.style"
@@ -28,4 +30,17 @@ keymap.add {
   ["ctrl+7"] = "root:switch-to-tab-7",
   ["ctrl+8"] = "root:switch-to-tab-8",
   ["ctrl+9"] = "root:switch-to-tab-9",
+}
+
+
+command.add(nil, {
+  ["user-cmd:run"] = function()
+    core.command_view:enter("CMD >", function(cmd)
+      system.exec(string.format(" %q ", cmd))
+    end)
+  end,
+})
+
+keymap.add {
+  ["alt+x"] = "user-cmd:run",
 }
