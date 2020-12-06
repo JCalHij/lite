@@ -12,7 +12,7 @@ local style = require "core.style"
 require "user.colors.javi"
 
 -- Override data/core/config.lua
-config.treeview_size = 250 * SCALE
+config.treeview_size = 350 * SCALE
 
  -- Override data/core/style.lua
 style.scrollbar_size = common.round(10 * SCALE)
