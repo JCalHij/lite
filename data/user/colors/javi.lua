@@ -3,8 +3,8 @@
 local style = require "core.style"
 local common = require "core.common"
 
-style.font = renderer.font.load(EXEDIR .. "/data/fonts/JetBrainsMono-Regular.ttf", 13 * SCALE)
-style.code_font = renderer.font.load(EXEDIR .. "/data/fonts/JetBrainsMono-Regular.ttf", 15 * SCALE)
+style.font = renderer.font.load(EXEDIR .. "/data/fonts/JetBrainsMono-Regular.ttf", 15 * SCALE)
+style.code_font = renderer.font.load(EXEDIR .. "/data/fonts/JetBrainsMono-Regular.ttf", 18 * SCALE)
 
 style.background = { common.color "#20202b" } -- Text edition background
 style.background2 = { common.color "#26263F" } -- Overall background
